@@ -1,0 +1,77 @@
+// Q3. Count frequency of each character
+
+// Input: "aabbbcc"
+// Output:
+
+// {
+//   a: 2,
+//   b: 3,
+//   c: 2
+// }
+
+// 🧠 Level 2 – Logic Activation
+// Q4. Check if a string is palindrome
+
+// Input: "madam" → true
+// Input: "hello" → false
+
+// No built-in tricks.
+
+// Q5. Two Sum (very important pattern)
+
+// Given:
+
+// nums = [2, 7, 11, 15]
+// target = 9
+
+
+// Return indices of numbers that add to target.
+
+// Expected:
+
+// [0, 1]
+
+
+// Don’t brute force blindly. Think.
+
+🧠 Level 3 – Brain Stretch
+Q6. Move all zeros to end
+
+Input: [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+In-place. No new array ideally.
+
+⏱ Rules
+
+Max 25 mins per question.
+
+Write logic steps first.
+
+Then code.
+
+If stuck 20 mins → tell me WHERE you’re stuck.
+
+Not “samajh nahi aa raha”.
+
+Tell me:
+
+Loop confusion?
+
+Condition?
+
+Data structure?
+
+Now here’s the important part:
+
+If you can solve 4+ alone →
+Your fundamentals are not weak.
+
+If you struggle on Q1–Q3 →
+You don’t “know JS deeply” yet, no matter how many times you revised.
+
+Start with Q1.
+
+Send me your code.
+
+No excuses.
