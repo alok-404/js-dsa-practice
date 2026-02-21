@@ -37,15 +37,76 @@
 // Input: "madam" → true
 // Input: "hello" → false
 
-let string = "madam";
-let reverse = "";
+let string = "racecar";
+// let reverse = "";
 
-for (let i = string.length-1; i >= 0; i--) {
-//   console.log(string[i]);
-  reverse += string[i]
-}
+// for (let i = string.length-1; i >= 0; i--) {
+// //   console.log(string[i]);
+//   reverse += string[i]
+// }
 
-if(string === reverse) console.log(`${string} is Palindrome`);
-else console.log(`${string} is not Palindrome`);
+// if(string === reverse) console.log(`${string} is Palindrome`);
+// else console.log(`${string} is not Palindrome`);
 
+// for(let i = 0; i<=string.length-1 ; i++){
+//     // console.log(string[i]);
+//     for(let j = string.length-1; j>=0; j--){
+//     // console.log(string[j]);
+//       if(string[i] === string[j]) console.log(`${string} is Palindrome`)
+//     else console.log(`${string} is not Palindrome`);
+//     }
 
+// }
+
+// let i = 0;
+// let j = string.length - 1;
+// isPalindrome = true;
+
+// while (i < j) {
+//     if(string[i] !== string[j]){
+//         isPalindrome = false;
+//         break
+//     }
+//   i++;
+//   j--;
+// }
+
+// if (isPalindrome) console.log(`${string} is Palindrome`);
+// else console.log(`${string} is not Palindrome`);
+
+// Q3. Count frequency of each character
+
+// Input: "aabbbcc"
+// Output:
+
+// {
+//   a: 2,
+//   b: 3,
+//   c: 2
+// }
+
+// let nf = "aabbbcdddee";
+// let obj = {};
+
+// let i = 0;
+
+// while (i <= nf.length - 1) {
+//   let char = nf[i];
+
+//   if (obj[char]) {
+//     obj[char]++; //if already exist toh incriment krna
+//   } else {
+//     obj[char] = 1; // first time hai toh initialize
+//   }
+//   i++;
+// }
+// console.log(obj);
+
+// i=0
+// while (i <= nf.length - 1) {
+//   if (obj[nf[i]] === 1) {
+//     console.log("First non-repeating:", nf[i]);
+//     break;
+//   }
+//   i++;
+// }
