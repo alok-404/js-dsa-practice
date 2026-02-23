@@ -80,3 +80,54 @@ while(k < abc.length-1){
     k++;
 }
 
+// Q-remove duplicates from string:
+
+//----------------Approach 1----------------
+
+let inp = "programMING"
+inp = inp.toLowerCase()
+let result = ""
+
+for(let i = 0; i<inp.length; i++){
+  let char = inp[i];
+  // console.log(char);
+  
+  if(!result.includes(char)){
+    result += char    
+  }
+}
+console.log(result);
+
+//-----------version 2 -------
+let result2 = ""
+
+let seen = {}
+
+for(let i = 0; i<inp.length; i++){
+  let char = inp[i];
+
+  if(!seen[char]){
+    seen[char] = true;
+    result2+=char
+  }
+}
+console.log(seen);
+
+
+//Q check vowel inside a input
+
+let count = 0;
+
+for(let i = 0 ; i<inp.length ; i++){
+  let char = inp[i];
+
+  if(char === "a" || char === "e" || char === "i" || char === "o" ||char === "u"){
+    count ++
+  }
+}
+console.log(`count = ${count}`);
+
+
+//Q what is inp is "ProgRAmMiNG"
+
+//---approach is simple we tranform whole inp in lowercase at first
