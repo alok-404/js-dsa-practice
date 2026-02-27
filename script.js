@@ -118,11 +118,11 @@ function firstUniqChar(s) {
 console.log(firstUniqChar("leetcode"));
 
 function isAnagram(s, t) {
-  if(s.length !== t.length) return false
+  if (s.length !== t.length) return false;
 
-  let obj = {}
-  for(let i = 0 ; i<s.length; i++){
-    let char = s[i]
+  let obj = {};
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i];
     // if(obj[char]){
     //   obj[char]++
     // }
@@ -130,25 +130,53 @@ function isAnagram(s, t) {
     //   obj[char] = 1;
     // }
 
-    obj[char] = (obj[char] || 0 ) + 1
-
+    obj[char] = (obj[char] || 0) + 1;
   }
-  console.log(obj);
-  
+  // console.log(obj);
 
-  for(let j = 0 ; j<t.length ; j++){
-    let char2 = t[j]
+  for (let j = 0; j < t.length; j++) {
+    let char2 = t[j];
     if (!obj[char2]) return false;
     obj[char2]--;
-     if (obj[char2] < 0) return false;
+    if (obj[char2] < 0) return false;
   }
-  console.log(obj);
-  
-  return true
+  // console.log(obj);
 
-
-
+  return true;
 }
 
-console.log(isAnagram("listen", "silent"));//true hoga
+console.log(isAnagram("listen", "silent")); //true hoga
 console.log(isAnagram("rat", "car")); // false
+
+function isValid(s) {
+  let stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i];
+
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    } else {
+      if (stack.length === 0) return false;
+
+      let top = stack[stack.length - 1];
+
+      if (
+        (char === ")" && top === "(") ||
+        (char === "}" && top === "{") ||
+        (char === "]" && top === "[")
+      ) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(isValid("([{}])"));//true
+console.log(isValid("([)]"));   // false
+console.log(isValid("((("));    // false
+
