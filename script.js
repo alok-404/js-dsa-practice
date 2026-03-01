@@ -215,7 +215,36 @@ function twoSum(num, target) {
   }
 }
 
-console.log(twoSum([3, 4, 5, 6], 10));
-console.log(twoSum([2, 7, 11, 15], 9));
-console.log(twoSum([3, 2, 4], 6));
-console.log(twoSum([3, 3], 6));
+// console.log(twoSum([3, 4, 5, 6], 10));
+// console.log(twoSum([2, 7, 11, 15], 9));
+// console.log(twoSum([3, 2, 4], 6));
+// console.log(twoSum([3, 3], 6));
+
+
+function longestString(s) {
+  let left = 0;
+  let maxLen = 0;
+  let map = {};
+
+  for (let right = 0; right < s.length; right++) {
+    let char = s[right];
+
+    // If character seen before and inside current window
+    if (char in map) {
+      left = Math.max(left, map[char] + 1);
+    }
+
+    // Update last seen index
+    map[char] = right;
+
+    // Update max length
+    maxLen = Math.max(maxLen, right - left + 1);
+  }
+
+  return maxLen;
+}
+
+console.log(longestString("abcabcbb")); // 3
+console.log(longestString("bbbbb"));    // 1
+console.log(longestString("pwwkew"));   // 3
+console.log(longestString("abba"));     // 2
