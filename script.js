@@ -232,6 +232,7 @@ function longestString(s) {
     // If character seen before and inside current window
     if (char in map) {
       left = Math.max(left, map[char] + 1);
+      
     }
 
     // Update last seen index
@@ -248,3 +249,37 @@ console.log(longestString("abcabcbb")); // 3
 console.log(longestString("bbbbb"));    // 1
 console.log(longestString("pwwkew"));   // 3
 console.log(longestString("abba"));     // 2
+
+
+
+function longestAtMostTwoDistinct(s) {
+  let left = 0;
+  let maxLen = 0;
+  let freq = {};
+
+  for (let right = 0; right < s.length; right++) {
+    let char = s[right];
+
+    // Add current char
+    freq[char] = (freq[char] || 0) + 1;
+
+    // If more than 2 distinct, shrink window
+    while (Object.keys(freq).length > 2) {
+      let leftChar = s[left];
+      freq[leftChar]--;
+
+      if (freq[leftChar] === 0) {
+        delete freq[leftChar];
+      }
+
+      left++;
+    }
+
+    // Update max length
+    maxLen = Math.max(maxLen, right - left + 1);
+  }
+
+  return maxLen;
+}
+
+console.log(longestAtMostTwoDistinct("aabacbebebe")); // 6
