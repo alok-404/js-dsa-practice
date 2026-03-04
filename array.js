@@ -120,3 +120,68 @@ console.log(bestBuyAndSell([2,1,2,1,0,1,2]))
 // maxProfit = 2
 
 // loop finish toh return hoga maxProfit = 2
+
+//sum of array;
+let arr = [10,20,30,40,50,4,6,186,1,2]
+let sum = 0;
+for(let i = 0 ; i<arr.length ; i++){
+  sum = sum + arr[i];
+}
+
+console.log(sum);
+
+
+// find Greatest Element And Index
+
+let max = arr[0];
+let index = 0
+for(let i = 1; i<arr.length; i++){
+  let num = arr[i];
+  if(max < num){
+    max = num;
+    index = i
+  }
+}
+
+console.log(max,index);
+
+let min = arr[0];
+for(let i = 1; i<arr.length; i++){
+  let num = arr[i];
+  if(min > num){
+    min = num;
+  }
+}
+
+console.log(min);
+
+
+// function calculateSumAndMean(arr, n) {
+    // Write your logic here
+//     let sum = 0;
+//     for(let i = 0; i<arr.length ; i++){
+//         sum = sum + arr[i]
+//     }
+//     let mean = (sum / n).toFixed(1)
+//     return[sum , mean]
+// }
+
+// module.exports = { calculateSumAndMean };
+
+const array = new Array(5).fill(0);
+
+for (let i = 0; i < 5; i++) {
+    console.log(array[i] + " ");
+}
+
+let x = 50;
+
+if (x <= 50) {
+    if (x === 50) {
+        console.log("x is 50");
+    } else {
+        console.log("x is less than 50");
+    }
+} else {
+    console.log("x is greater than 50");
+}
