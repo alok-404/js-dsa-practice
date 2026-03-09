@@ -321,31 +321,102 @@
 
 //rotate elements left by k [method one] brute force but dont try it on anywhere
 
-let array = [1, 2, 3, 4, 5];
-console.log(`arrAY = ${array}`);
+// let array = [1, 2, 3, 4, 5];
+// console.log(`arrAY = ${array}`);
 
+// let k = 2;
+// k = k % length //ise ye hoga ki jese user ne 5 dala toh 5 baar ghumane kii need he ky dubara se arrayt toh same he hojayega na isliye mod krdo uska
 
-let k = 2;
-k = k % length //ise ye hoga ki jese user ne 5 dala toh 5 baar ghumane kii need he ky dubara se arrayt toh same he hojayega na isliye mod krdo uska
+// for (let i = 1; i <= k; i++) {
+//   let copy = array[0];
+//   for (let j = 0; j < array.length - 1; j++) {
+//     array[j] = array[j + 1];
+//   }
 
-for (let i = 1; i <= k; i++) {
-  let copy = array[0];
-  for (let j = 0; j < array.length - 1; j++) {
-    array[j] = array[j + 1];
+//   array[array.length - 1] = copy;
+// }
+
+// console.log(array);
+
+// second method more efficient time complexity = o(n) and space=1
+
+// let temp = new Array(array.length)
+// let k = 3;
+// for(let i = 0; i<array.length ; i++){
+//   temp[i] = array[(i + k)%array.length]
+// }
+// console.log(temp);
+
+//third method jo ki yahi important haii
+
+// let arr = [1, 2, 3, 4, 5];
+// let prompt = require("prompt-sync")();
+
+// let k = Number(prompt("Enter the value of K: "));
+
+// k = k % arr.length;
+
+// rotateElemByK(arr, 0, k - 1);
+// rotateElemByK(arr, k, arr.length - 1);
+// rotateElemByK(arr, 0, arr.length - 1);
+
+// console.log(arr);
+
+// function rotateElemByK(arr, i, j) {
+//   while (i < j) {
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     i++;
+//     j--;
+//   }
+// }
+
+//linear search an array-if element found print the index else -1
+function linearSearch(arr) {
+  let target = 26;
+  index = -1;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (target === arr[i]) {
+      index = i;
+      break;
+    }
+  } 
+if(index === -1) return console.log("Element not found");
+else return console.log("index is found at " + index);
+
+}
+linearSearch([5, 10, 20, 44, 26, 15]);
+
+//same question by binary search and hum binary search mn indow shrink krte hai.
+
+if(binarySearchForElemFound([10,23,45,67,69,190,200],190)===-1)console.log("not found");
+else console.log("Element found")
+
+function binarySearchForElemFound(arr,target){
+  let s = 0 , e = arr.length-1 //s = start point and e = end point
+  while(s<=e){
+    let mid = Math.floor((s+e)/2)
+    if(arr[mid] === target) return mid
+    else if(arr[mid]> target) e = mid - 1;
+    else s = mid + 1
   }
-
-  array[array.length - 1] = copy;
+  return -1
 }
 
-console.log(array);
-
-second method more efficient time complexity = o(n) and space=1
-
-let temp = new Array(array.length)
-let k = 3;
-for(let i = 0; i<array.length ; i++){
-  temp[i] = array[(i + k)%array.length]
+function moveZerosToEnd(arr) {
+    // Write your logic here
+    j = 0;
+    for(let i = 0; i<arr.length ; i++){
+      if(arr[i] === 1){
+        let temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
+            j++
+        }
+    }
+    return arr
+    
 }
-console.log(temp);
-
-
+console.log(moveZerosToEnd([0,1,0,1,0]))
