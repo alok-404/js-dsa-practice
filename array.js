@@ -420,3 +420,24 @@ function moveZerosToEnd(arr) {
     
 }
 console.log(moveZerosToEnd([0,1,0,1,0]))
+
+
+// bubble sort
+
+function bubbleSort(arr){
+let n = arr.length;
+console.log(n);
+
+for(let i = 0 ; i< n-1 ; i++){
+  for(let j = 0 ; j < n - i - 1 ; j++){
+    if(arr[j]>arr[j+1]){
+      let temp = arr[j]
+      arr[j] = arr[j+1]
+      arr[j+1]= temp
+    }
+  }
+}
+return arr
+}
+let bs = bubbleSort([1,4,32,9,10])
+console.log(bs);
