@@ -441,3 +441,22 @@ return arr
 }
 let bs = bubbleSort([1,4,32,9,10])
 console.log(bs);
+
+function SelectionSort(arr){
+for(let i = 0 ; i<arr.length-1 ; i++){
+  let small = i;
+  for(let j = i+1 ; j <arr.length; j++){
+    if(arr[small]>arr[j]){
+      small = j
+    }
+  }
+  if(i != small){
+    let temp = arr[i];
+    arr[i] = arr[small];
+    arr[small] = temp
+  }
+}
+return arr
+}
+let ss = SelectionSort([1,4,3,2,9,10])
+console.log(ss)
